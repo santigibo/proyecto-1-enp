@@ -71,7 +71,8 @@ simu2=function(X,M,r,s,f){
   return(c(esti,desvi))
 }
 
-percentage=function(ugestad, percentile){
+percentage=functio
+n(ugestad, percentile){
   c = 0
   for(i in 1:500){
     if(ugestad[i] > percentile){
