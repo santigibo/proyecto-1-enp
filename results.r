@@ -25,7 +25,7 @@ sd_2 = sd(ugestad2)
 
 per2 = percentage(ugestad2, 1.96) # Porcentaje de datos afuera del percentil 95
 
-Titles <- c("", "Hipótesis nula", "Hipótesis alternativa")
+Titles <- c("", "Primer caso", "Segundo caso")
 Iterations <- c("Iteraciones", 2000, 2000)
 Means <- c("Media", mean_1,mean_2)
 SD <- c("Desviación Estándar", sd_1, sd_2)
