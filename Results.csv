@@ -1,0 +1,5 @@
+"","Titles","Iterations","Means","SD","CVM","Percentage"
+"1","","Iteraciones","Media","Desviación Estándar","Omega CVM test","Porcentaje fuera de 5% y 95%"
+"2","Hipótesis nula","2000","-Inf","NaN","16.7782024300052","0.556"
+"3","","7000","0.00645563956244606","15.8367011311293","16.7782024300052","0"
+"4","Hipótesis alternativa","2000","29.647826121567","91.2346570551966","-","1"
