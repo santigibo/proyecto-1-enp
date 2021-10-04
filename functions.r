@@ -24,7 +24,7 @@ h01=function(vx,vy){
 }
 
 # Simulación para obtener las 2000 iteraciones del cálculo 
-simu=function(X,Y,M,r,s,f){
+simu=function(X,Y,M,r,s,f,ix,iy){
   estad=rep(0,M)
   for(j in 1:M){
     ixstar=rep(0,r)
@@ -58,7 +58,7 @@ percentage=function(ugestad, percentile){
 }
 
 # Simulación para la parte 2, tomando solo la muestra X
-simu2=function(X,M,r,s,f){
+simu2=function(X,M,r,s,f,ix,iy){
   estad=rep(0,M)
   for(j in 1:M){
     ixstar=rep(0,r)
@@ -87,10 +87,10 @@ u_statistic=function(m, n, L){
         iy=1:n
         N=m+n
         lambda=m/N
-        z01=simu(X,Y,L,4,3,h01)[1]-(1/4) # Cálculo ecuación (2)
-        z10=simu(X,Y,L,3,4,h10)[1]-(1/4) # Cálculo ecuación (2)
+        z01=simu(X,Y,L,4,3,h01,ix,iy)[1]-(1/4) # Cálculo ecuación (2)
+        z10=simu(X,Y,L,3,4,h10,ix,iy)[1]-(1/4) # Cálculo ecuación (2)
         sigma=4*(z10/lambda+z01/(1-lambda))
-        u=simu(X,Y,L,2,2,h)[1] # Media del resultado de la simulación
+        u=simu(X,Y,L,2,2,h,ix,iy)[1] # Media del resultado de la simulación
         ugorro=sqrt(N)*(u-(1/2))/sigma # Cálculo de U gorro con la fórmula dada
         ugestad[i]=ugorro
     }
@@ -106,10 +106,10 @@ u_statistic2=function(m, n, L){
         iy=1:n
         N=m+n
         lambda=m/N
-        z01=simu2(X,L,4,3,h01)[1]-(1/4) # Cálculo ecuación (2) con solo muestra X
-        z10=simu2(X,L,3,4,h10)[1]-(1/4) # Cálculo ecuación (2) con solo muestra X
+        z01=simu2(X,L,4,3,h01,ix,iy)[1]-(1/4) # Cálculo ecuación (2) con solo muestra X
+        z10=simu2(X,L,3,4,h10,ix,iy)[1]-(1/4) # Cálculo ecuación (2) con solo muestra X
         sigma=4*(z10/lambda+z01/(1-lambda))
-        u=simu(X,Y,L,2,2,h)[1] # Media del resultado de la simulación 2
+        u=simu(X,Y,L,2,2,h,ix,iy)[1] # Media del resultado de la simulación 2
         ugorro=sqrt(N)*(u-(1/2))/sigma # Cálculo de U gorro con la fórmula dada
         ugestad[i]=ugorro
     }
